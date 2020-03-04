@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import './plugins/fontawesome'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -10,3 +11,17 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+
+library.add(faEdit);
+
+library.add(faTrash);
+
+
+

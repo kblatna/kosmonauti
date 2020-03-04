@@ -12,9 +12,8 @@
 
             <div class="cosmonaut--box__button-holder">
 
-              <button></button>
-              <button></button>
-
+              <button><font-awesome-icon icon="trash" size="2x"></font-awesome-icon></button>
+              <button><font-awesome-icon icon="edit" size="2x"></font-awesome-icon></button>
 
             </div>
         </div>
@@ -80,7 +79,7 @@ h3 {
 .cosmonaut--box img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
@@ -94,12 +93,7 @@ h3 {
 
 .cosmonaut--box__button-holder button {
     border: none;
-    border-radius: 50%;
-    background-color: grey;
-    padding: 10px;
-
-    color: white;
-    font-size: 24px;
+    background-color: transparent;
     cursor: pointer;
 }
 
