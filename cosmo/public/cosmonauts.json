@@ -1,0 +1,47 @@
+[
+	{
+		"id": 1,
+		"image": "/vladimir_remek.jpg",
+		"alt": "vladimír remek",
+		"name": "Vladimír",
+		"surname": "Remek",
+		"birth": "26. 9. 1948",
+		"superpower": "cleverness"
+	},
+	{
+		"id": 2,
+		"image": "/ivan_bella.jpg",
+		"alt": "ivan bella",
+		"name": "Ivan",
+		"surname": "Bella",
+		"birth": "21. 5. 1964",
+		"superpower": "cleverness"
+	},
+	{
+		"id": 3,
+		"image": "/andreas_mogensen.jpg",
+		"alt": "andreas mogensen",
+		"name": "Andreas E.",
+		"surname": "Mogensen",
+		"birth": "2. 11. 1976",
+		"superpower": "cleverness"
+	},
+	{
+		"id": 4,
+		"image": "/samantha_cristoforetti.jpg",
+		"alt": "samantha cristoforetti",
+		"name": "Samantha",
+		"surname": "Cristoforetti",
+		"birth": "26. 4. 1977",
+		"superpower": "cleverness"
+	},
+	{
+		"id": 5,
+		"image": "/naoko_yamazaki.jpg",
+		"alt": "naoko yamazaki",
+		"name": "Naoko",
+		"surname": "Yamazaki",
+		"birth": "27. 12. 1970",
+		"superpower": "cleverness"
+	}
+]
