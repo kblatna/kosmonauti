@@ -1,17 +1,23 @@
 <template>
   <div class="home">
     <cosmonaut />
+    <addcosmonaut />
   </div>
 </template>
 
 <script>
 
 import Cosmonaut from '@/components/Cosmonaut.vue'
+import AddCosmonaut from '@/components/AddCosmonaut.vue'
 
 export default {
-  name: 'Home',
+  name: 'home',
+
   components: {
-    Cosmonaut
+    'cosmonaut': Cosmonaut,
+    'addcosmonaut': AddCosmonaut
   }
 }
 </script>
+
+

@@ -20,8 +20,10 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 library.add(faEdit);
-
 library.add(faTrash);
 
+import VModal from 'vue-js-modal'
+
+Vue.use(VModal);
 
 

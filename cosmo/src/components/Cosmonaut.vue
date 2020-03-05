@@ -17,12 +17,14 @@
 
             </div>
         </div>
+
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import AddCosmonaut from '@/components/AddCosmonaut.vue'
 
 export default {
   name: 'cosmonaut',
