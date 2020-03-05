@@ -7,12 +7,12 @@
         <div class="cosmonaut--box__inner">
 
             <h3>{{item.name}} {{item.surname}}</h3>
-            <p>{{item.birth}}</p>
-            <p>{{item.superpower}}</p>
+            <p><strong>Birth:</strong> {{item.birth}}</p>
+            <p><strong>Superpower:</strong> {{item.superpower}}</p>
 
             <div class="cosmonaut--box__button-holder">
 
-              <button><font-awesome-icon icon="trash" size="2x"></font-awesome-icon></button>
+              <button @click="deleteEvent(index)"><font-awesome-icon icon="trash" size="2x"></font-awesome-icon></button>
               <button><font-awesome-icon icon="edit" size="2x"></font-awesome-icon></button>
 
             </div>
@@ -43,6 +43,9 @@ export default {
              .then(response => {
         this.items = response.data
       });
+    },
+    deleteEvent: function(index) {
+      this.items.splice(index, 1);
     }
   },
 
