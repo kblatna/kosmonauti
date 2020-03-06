@@ -16,11 +16,13 @@ new Vue({
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 library.add(faEdit);
 library.add(faTrash);
+library.add(faUserPlus);
 
 import VModal from 'vue-js-modal'
 
