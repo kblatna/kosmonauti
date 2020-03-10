@@ -1,6 +1,6 @@
 <template>
-  <div class="cosmonaut">
-      <div class="cosmonaut--box" v-for="(item, index) in items">
+    <div class="cosmonaut">
+        <div class="cosmonaut--box" v-for="(item, index) in items">
 
         <img :src="require('../assets/images' + item.image)" :alt="item.alt"/>
 
@@ -11,47 +11,56 @@
             <p><strong>Superpower:</strong> {{item.superpower}}</p>
 
             <div class="cosmonaut--box__button-holder">
-
-              <button @click="deleteEvent(index)"><font-awesome-icon icon="trash" size="2x"></font-awesome-icon></button>
-              <button><font-awesome-icon icon="edit" size="2x"></font-awesome-icon></button>
-
+                <button @click="deleteEvent(index)"><font-awesome-icon icon="trash" size="2x"></font-awesome-icon></button>
+                <button><font-awesome-icon icon="edit" size="2x"></font-awesome-icon></button>
             </div>
         </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
 import axios from 'axios';
+import AddCosmonaut from '@/components/AddCosmonaut.vue'
 
 export default {
-  name: 'cosmonaut',
-	data() {
-		return {
-      items: []
-		}
-	},
-	mounted() {
-		this.fetchItems()
-  },
+    name: 'cosmonaut',
+        data() {
+            return {
+        items: []
+            }
+        },
+        mounted() {
+            this.fetchItems()
+        },
 	methods: {
-    fetchItems() {
-			  let id = this.$route.params.id;
-        let url = '/cosmonauts.json';
+        fetchItems() {
+                let id = this.$route.params.id;
+            let url = '/cosmonauts.json';
 
-        axios.get(url)
-             .then(response => {
-        this.items = response.data
-      });
+            axios.get(url)
+                .then(response => {
+            this.items = response.data
+            });
+        },
+        deleteEvent: function(index) {
+        this.items.splice(index, 1);
+        }
     },
-    deleteEvent: function(index) {
-      this.items.splice(index, 1);
-    }
-  },
-
 	watch: {
-    '$route.params.id': 'fetchItems'
-  }
+        '$route.params.id': 'fetchItems',
+        onAdd: function() {
+            let id = this.items.length + 1
+            this.onAdd.id = id
+            this.items.push(this.onAdd);
+        }
+    },
+    props: {
+        onAdd: {
+            type: Object
+        }
+    }
+
 }
 
 </script>
