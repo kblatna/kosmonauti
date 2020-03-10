@@ -1,7 +1,7 @@
 <template>
     <div class="home">
-        <cosmonaut />
-        <addcosmonaut />
+        <cosmonaut :onAdd="newCosmonaut" />
+        <addcosmonaut @newCosmonaut="addNewCosmonaut" />
     </div>
 </template>
 
@@ -13,9 +13,21 @@ import AddCosmonaut from '@/components/AddCosmonaut.vue'
 export default {
     name: 'home',
 
+    data() {
+        return {
+            newCosmonaut: null
+        }
+    },
+
     components: {
         'cosmonaut': Cosmonaut,
         'addcosmonaut': AddCosmonaut
+    },
+
+    methods: {
+        addNewCosmonaut(data) {
+            this.newCosmonaut = data;
+        }
     }
 }
 </script>

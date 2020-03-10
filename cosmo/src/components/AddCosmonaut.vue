@@ -19,7 +19,6 @@
 
         </div>
     </div>
-      <!--<pre>{{ $data }}</pre>-->
 </div>
 
 </template>
@@ -30,30 +29,28 @@ import Cosmonaut from '@/components/Cosmonaut.vue'
 
 export default {
     name: 'addcosmonaut',
-        data() {
-            return {
-                cosmonauts: []
-            }
-        },
+    data() {
+        return {
+            cosmonauts: []
+        }
+    },
 
     methods: {
         addCosmonaut: function () {
             this.cosmonauts.push({ name: '', surname: '', birth: '', superpower: '' });
         },
-    addJson(index) {
-      this.items.push({
-        name: this.cosmonaut.name,
-        surname: this.cosmonaut.surname,
-        birth: this.cosmonaut.birth,
-        superpower: this.cosmonaut.superpower
-    })
-    /*
-    // assuming you'd like to clear the input-box fields after adding the user
-    this.input_val_firstName = ''
-    this.input_val_secondName = ''
-    */
-    },
-
+        addJson(index) {
+            let cosmonaut = this.cosmonauts[index]
+            this.$emit('newCosmonaut', {
+                image: "/placeholder.jpg",
+                alt: cosmonaut.name + " " + cosmonaut.surname,
+                name: cosmonaut.name,
+                surname: cosmonaut.surname,
+                birth: cosmonaut.birth,
+                superpower: cosmonaut.superpower
+            })
+            this.cosmonauts.splice(index, 1)
+        },
         deleteCosmonaut(index) {
             this.cosmonauts.splice(index, 1);
         },
@@ -68,8 +65,7 @@ export default {
         },
         deleteEvent(index) {
             this.items.splice(index, 1);
-            },
-
+        },
         mounted() {
             this.fetchItems()
         },

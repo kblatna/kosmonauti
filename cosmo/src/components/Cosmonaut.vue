@@ -48,8 +48,19 @@ export default {
         }
     },
 	watch: {
-    '$route.params.id': 'fetchItems'
+        '$route.params.id': 'fetchItems',
+        onAdd: function() {
+            let id = this.items.length + 1
+            this.onAdd.id = id
+            this.items.push(this.onAdd);
+        }
+    },
+    props: {
+        onAdd: {
+            type: Object
+        }
     }
+
 }
 
 </script>
