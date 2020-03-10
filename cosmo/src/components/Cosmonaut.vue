@@ -25,14 +25,14 @@ import AddCosmonaut from '@/components/AddCosmonaut.vue'
 
 export default {
     name: 'cosmonaut',
-        data() {
-            return {
-        items: []
-            }
-        },
-        mounted() {
-            this.fetchItems()
-        },
+    data() {
+        return {
+    items: []
+        }
+    },
+    mounted() {
+        this.fetchItems()
+    },
 	methods: {
         fetchItems() {
                 let id = this.$route.params.id;
@@ -60,7 +60,6 @@ export default {
             type: Object
         }
     }
-
 }
 
 </script>
@@ -108,7 +107,5 @@ h3 {
     background-color: transparent;
     cursor: pointer;
 }
-
-
 
 </style>
